@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meme_drop/services/screenArguments.dart';
+import 'package:meme_drop/services/argumantURL.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -10,9 +11,6 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     final ScreenArguments args = ModalRoute.of(context).settings.arguments;
-    // return Container(
-    //   child: Text(args.memes[0]),
-    // );
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -29,7 +27,13 @@ class _HomeState extends State<Home> {
               child: InkWell(
                 splashColor: Colors.blue.withAlpha(30),
                 onTap: () {
-                  print(args.memes[index]['url']);
+                  Navigator.pushNamed(
+                    context,
+                    '/memeCreate',
+                    arguments: ArgumentURL(
+                      args.memes[index]['url'],
+                    ),
+                  );
                 },
                 child: Container(
                   child: Image.network(
@@ -38,24 +42,11 @@ class _HomeState extends State<Home> {
                 ),
               ),
             );
-            // return Image.network(
-            //   args.memes[index]['url'],
-            // );
           },
           separatorBuilder: (BuildContext context, int index) =>
               const Divider(),
         ),
       ),
     );
-    // return ListView.separated(
-    //   padding: const EdgeInsets.all(8),
-    //   itemCount: args.memes.length,
-    //   itemBuilder: (BuildContext context, int index) {
-    //     return Image.network(
-    //       args.memes[index]['url'],
-    //     );
-    //   },
-    //   separatorBuilder: (BuildContext context, int index) => const Divider(),
-    // );
   }
 }
