@@ -25,9 +25,22 @@ class _HomeState extends State<Home> {
           padding: const EdgeInsets.all(8),
           itemCount: args.memes.length,
           itemBuilder: (BuildContext context, int index) {
-            return Image.network(
-              args.memes[index]['url'],
+            return Card(
+              child: InkWell(
+                splashColor: Colors.blue.withAlpha(30),
+                onTap: () {
+                  print(args.memes[index]['url']);
+                },
+                child: Container(
+                  child: Image.network(
+                    args.memes[index]['url'],
+                  ),
+                ),
+              ),
             );
+            // return Image.network(
+            //   args.memes[index]['url'],
+            // );
           },
           separatorBuilder: (BuildContext context, int index) =>
               const Divider(),
