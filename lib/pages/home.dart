@@ -32,6 +32,7 @@ class _HomeState extends State<Home> {
                     '/memeCreate',
                     arguments: ArgumentURL(
                       args.memes[index]['url'],
+                      args.memes[index]['id'],
                     ),
                   );
                 },
