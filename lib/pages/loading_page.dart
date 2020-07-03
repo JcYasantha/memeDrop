@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:meme_drop/services/screenArguments.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class LoadingPage extends StatefulWidget {
   @override
@@ -38,28 +39,25 @@ class _LoadingPageState extends State<LoadingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: CircularProgressIndicator()),
-      // child: FutureBuilder<List>(
-      //   future: futureMemes,
-      //   builder: (BuildContext context, AsyncSnapshot<List> snapshot) {
-      //     if (snapshot.hasData) {
-      //       print(snapshot.data[0]['url']);
-      //       Navigator.pushReplacementNamed(
-      //         context,
-      //         '/home',
-      //         arguments: ScreenArguments(
-      //           snapshot.data,
-      //         ),
-      //       );
-
-      //       return Container();
-      //     } else if (snapshot.hasError) {
-      //       return Text('Error: ${snapshot.error}');
-      //     } else {
-      //       return Center(child: CircularProgressIndicator());
-      //     }
-      //   },
-      // ),
+      backgroundColor: Colors.black87,
+      body: Column(
+        //CrossAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          SpinKitWanderingCubes(
+            color: Colors.white,
+            size: 20.0,
+          ),
+          Text(
+            'memeDrop',
+            style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.w600,
+                fontSize: 30.0),
+          ),
+        ],
+      ),
     );
   }
 }
