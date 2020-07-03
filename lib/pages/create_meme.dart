@@ -24,13 +24,22 @@ class _MemeCreateState extends State<MemeCreate> {
             Image.network(
               args.url,
             ),
-            TextField(
-              controller: firstLine,
-              decoration: InputDecoration(labelText: 'Enter the first line'),
-            ),
-            TextField(
-              controller: secondLine,
-              decoration: InputDecoration(labelText: 'Enter the second line'),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                children: <Widget>[
+                  TextField(
+                    controller: firstLine,
+                    decoration:
+                        InputDecoration(labelText: 'Enter the first line'),
+                  ),
+                  TextField(
+                    controller: secondLine,
+                    decoration:
+                        InputDecoration(labelText: 'Enter the second line'),
+                  ),
+                ],
+              ),
             ),
           ],
         ),
@@ -42,12 +51,11 @@ class _MemeCreateState extends State<MemeCreate> {
             context: context,
             builder: (context) {
               return AlertDialog(
-                content: Text(firstLine.text),
+                content: Text('${firstLine.text} ${secondLine.text}'),
               );
             },
           );
         },
-        tooltip: 'Create the meme!',
         child: Icon(Icons.create),
       ),
     );
