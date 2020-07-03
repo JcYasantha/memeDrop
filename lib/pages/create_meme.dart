@@ -13,6 +13,7 @@ class _MemeCreateState extends State<MemeCreate> {
 
   void sendMeme(
       String id, String url, String firstLine, String secondLine) async {
+    // ignore: non_constant_identifier_names
     final String template_id = id;
     final String username = 'memememeDrop';
     final String password = 'memedrop123';
@@ -24,6 +25,14 @@ class _MemeCreateState extends State<MemeCreate> {
 
     if (response.statusCode == 200) {
       print(response.data['data']['url']);
+      Navigator.pushNamed(
+        context,
+        '/downloadMeme',
+        arguments: ArgumentURL(
+          response.data['data']['url'],
+          template_id,
+        ),
+      );
     } else {
       throw Exception('Failed to load memes');
     }
