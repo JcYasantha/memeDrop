@@ -39,23 +39,27 @@ class _LoadingPageState extends State<LoadingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black87,
+      backgroundColor: Colors.grey[200],
       body: Column(
         //CrossAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          SpinKitWanderingCubes(
-            color: Colors.white,
+          Image.asset(
+            'assets/memeDrop.png',
+            scale: 10.0,
+          ),
+          SpinKitThreeBounce(
+            color: Colors.grey[600],
             size: 20.0,
           ),
-          Text(
-            'memeDrop',
-            style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.w600,
-                fontSize: 30.0),
-          ),
+          // Text(
+          //   'memeDrop',
+          //   style: TextStyle(
+          //       color: Colors.white,
+          //       fontWeight: FontWeight.w600,
+          //       fontSize: 30.0),
+          // ),
         ],
       ),
     );
