@@ -21,8 +21,6 @@ class _LoadingPageState extends State<LoadingPage> {
     var response = await Dio().get('https://api.imgflip.com/get_memes');
 
     if (response.statusCode == 200) {
-      //print(json.decode(response.body)['data']['memes'][0]);
-      //return json.decode(response.body)['data']['memes'][0];
       Navigator.pushReplacementNamed(
         context,
         '/home',
@@ -30,7 +28,6 @@ class _LoadingPageState extends State<LoadingPage> {
           response.data['data']['memes'],
         ),
       );
-      //return response.data['data']['memes'];
     } else {
       throw Exception('Failed to load memes');
     }
@@ -41,7 +38,6 @@ class _LoadingPageState extends State<LoadingPage> {
     return Scaffold(
       backgroundColor: Colors.grey[200],
       body: Column(
-        //CrossAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
@@ -53,13 +49,6 @@ class _LoadingPageState extends State<LoadingPage> {
             color: Colors.grey[600],
             size: 20.0,
           ),
-          // Text(
-          //   'memeDrop',
-          //   style: TextStyle(
-          //       color: Colors.white,
-          //       fontWeight: FontWeight.w600,
-          //       fontSize: 30.0),
-          // ),
         ],
       ),
     );

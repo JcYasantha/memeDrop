@@ -44,7 +44,7 @@ class _MemeCreateState extends State<MemeCreate> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Colors.black87,
+        backgroundColor: Colors.lightBlue[700],
         title: Text("Edit Meme"),
       ),
       body: SingleChildScrollView(
@@ -75,7 +75,7 @@ class _MemeCreateState extends State<MemeCreate> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.black87,
+        backgroundColor: Colors.lightBlue[700],
         onPressed: () {
           sendMeme(args.id, args.url, firstLine.text, secondLine.text);
         },

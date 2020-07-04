@@ -14,11 +14,11 @@ class _HomeState extends State<Home> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Colors.black87,
+        backgroundColor: Colors.lightBlue[700],
         title: Text("Select a meme template"),
       ),
       body: Container(
-        color: Colors.black54,
+        color: Colors.grey[200],
         child: ListView.separated(
           padding: const EdgeInsets.all(8),
           itemCount: args.memes.length,

@@ -13,7 +13,7 @@ class _DownloadMemeState extends State<DownloadMeme> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Colors.black87,
+        backgroundColor: Colors.lightBlue[700],
         title: Text("Download Meme"),
       ),
       body: SingleChildScrollView(
