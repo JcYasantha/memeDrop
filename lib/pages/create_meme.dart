@@ -15,8 +15,8 @@ class _MemeCreateState extends State<MemeCreate> {
       String id, String url, String firstLine, String secondLine) async {
     // ignore: non_constant_identifier_names
     final String template_id = id;
-    final String username = 'memememeDrop';
-    final String password = 'memedrop123';
+    final String username = 'place your username here';
+    final String password = 'place your password here';
     final String text0 = firstLine;
     final String text1 = secondLine;
 
